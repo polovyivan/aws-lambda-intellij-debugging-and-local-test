@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  localstack:
+    container_name: localstack
+    image: localstack/localstack
+    ports:
+      - "4566-4599:4566-4599"
+    environment:
+      - SERVICES=s3
+      - DATA_DIR=/tmp/localstack/data
+    volumes:
+      - './create-s3-bucket.sh:/docker-entrypoint-initaws.d/create-s3-bucket.sh'
