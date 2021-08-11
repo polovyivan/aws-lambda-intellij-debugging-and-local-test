@@ -11,3 +11,4 @@ services:
       - DATA_DIR=/tmp/localstack/data
     volumes:
       - './create-s3-bucket.sh:/docker-entrypoint-initaws.d/create-s3-bucket.sh'
+      - '/var/run/docker.sock:/var/run/docker.sock'
